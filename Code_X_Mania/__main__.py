@@ -48,7 +48,7 @@ async def start_services():
     if Var.ON_HEROKU:
         print('------------------ Starting Keep Alive Service ------------------')
         print('\n')
-    asyncio.create_task(Code_X_Mania.utils.ping_server())
+        asyncio.create_task(ping_server())
     print('-------------------- Initalizing Web Server -------------------------')
     app = web.AppRunner(await web_server())
     await app.setup()
